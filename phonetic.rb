@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 require 'yaml'
+require 'pathname'
 
-hash = File.open(File.dirname(__FILE__)+'/phonetic.yaml') {|yf| YAML::load(yf)}
+hash = File.open(Pathname(__dir__)+'phonetic.yaml') {|yf| YAML::load(yf)}
 
 string = ARGV[0].upcase.gsub(/[ \.]/,"").strip
 
