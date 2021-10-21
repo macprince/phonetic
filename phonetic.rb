@@ -5,12 +5,12 @@ require 'pathname'
 hash = File.open(Pathname(__dir__)+'phonetic.yaml') {|yf| YAML::load(yf)}
 
 string = ARGV[0].upcase.gsub(/[ \.]/,"").strip
-
+output = Array.new()
 string.each_char{|x|
   if hash.key?(x)
-    print hash[x]
+    output << hash[x]
   else
-    print x
+    output << x
   end
-  print " "
 }
+print output.join("\n")
