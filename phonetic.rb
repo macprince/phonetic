@@ -13,4 +13,4 @@ string.each_char{|x|
     output << x
   end
 }
-print output.join("\n")
+print output.join(" ")
